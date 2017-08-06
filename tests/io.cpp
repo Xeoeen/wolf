@@ -19,10 +19,14 @@ TEST_CASE("loadMany","[io]") {
     std::stringstream buffer("5 wolf wolves 0.6");
     std::cin.rdbuf(buffer.rdbuf());
     auto [a, b, c ,d] = wolf::io::loadMany<int, std::string, std::string, double>();
-    REQUIRE(a == 5);
-    REQUIRE(b == "wolf");
-    REQUIRE(c == "wolves");
-    REQUIRE(d == 0.6);
+    bool aa = (a == 5);
+    bool bb = (b == "wolf");
+    bool cc = (c == "wolves");
+    bool dd = (d == 0.6);
+    REQUIRE(aa);
+    REQUIRE(bb);
+    REQUIRE(cc);
+    REQUIRE(dd);
 }
 TEST_CASE("loadN","[io]") {
     std::stringstream buffer("1 2 3 4 5 6 7 8 9");
