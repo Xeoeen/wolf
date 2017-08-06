@@ -1,0 +1,8 @@
+*.out
+*.gcda
+*.gcno
+
+catch.hpp
+live.cpp
+live.bin
+testRunner
