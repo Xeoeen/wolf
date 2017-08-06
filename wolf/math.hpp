@@ -1,3 +1,5 @@
+#pragma once
+
 #include<algorithm>
 
 namespace wolf::math {
@@ -20,6 +22,7 @@ namespace wolf::math {
             return x * y / gcd(x, y);
         }
     }
+
     template<typename... Ts>
     inline auto sum(Ts&& ... args)
     {
@@ -63,7 +66,7 @@ namespace wolf::math {
     First max(const First& f, const Ts & ... args)
     {
         const First *retval = &f;
-        ( ( retval = &std::min(*retval, args)), ...);
+        ( ( retval = &std::max(*retval, args)), ...);
         return *retval;
     }
 

@@ -1,3 +1,5 @@
+#pragma once
+
 namespace wolf::logic{
 
     template<typename... Ts>
