@@ -1,4 +1,0 @@
-5
-wolf
-wolves
-0.6

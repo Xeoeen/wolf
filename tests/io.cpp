@@ -1,11 +1,11 @@
 #include "catch.hpp"
 #include <wolf/io.hpp>
-#include <cstdio>
 #include <string>
 #include <sstream>
 
 TEST_CASE("load","[io]") {
-    freopen("tests/inputs/load.txt", "r", stdin);
+    std::stringstream buffer("5 wolf wolves 0.6");
+    std::cin.rdbuf(buffer.rdbuf());
     auto a = wolf::io::load<int>();
     auto b = wolf::io::load<std::string>();
     auto c = wolf::io::load<std::string>();
@@ -16,7 +16,8 @@ TEST_CASE("load","[io]") {
     REQUIRE(d == 0.6);
 }
 TEST_CASE("loadMany","[io]") {
-    freopen("tests/inputs/load.txt", "r", stdin);
+    std::stringstream buffer("5 wolf wolves 0.6");
+    std::cin.rdbuf(buffer.rdbuf());
     auto [a, b, c ,d] = wolf::io::loadMany<int, std::string, std::string, double>();
     REQUIRE(a == 5);
     REQUIRE(b == "wolf");
@@ -24,13 +25,15 @@ TEST_CASE("loadMany","[io]") {
     REQUIRE(d == 0.6);
 }
 TEST_CASE("loadN","[io]") {
-    freopen("tests/inputs/loadN.txt", "r", stdin);
+    std::stringstream buffer("1 2 3 4 5 6 7 8 9");
+    std::cin.rdbuf(buffer.rdbuf());
     auto get = wolf::io::loadN<int>(9) ;
     auto expected = std::vector<int>{1, 2, 3, 4, 5,6, 7, 8, 9};
     REQUIRE(get == expected);
 }
 TEST_CASE("read","[io]") {
-    freopen("tests/inputs/load.txt", "r", stdin);
+    std::stringstream buffer("5 wolf wolves 0.6");
+    std::cin.rdbuf(buffer.rdbuf());
     std::string b, c;
     int a;
     double d;
