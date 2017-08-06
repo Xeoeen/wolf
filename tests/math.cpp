@@ -1,3 +1,4 @@
+#include "catch.hpp"
 #include <wolf/math.hpp>
 
 TEST_CASE("sum","[math]") {

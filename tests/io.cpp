@@ -1,3 +1,4 @@
+#include "catch.hpp"
 #include <wolf/io.hpp>
 #include <cstdio>
 #include <string>
