@@ -5,6 +5,12 @@
 #include<algorithm>
 #include<tuple>
 
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::vector<T> other) {
+    for(const auto& el : other) os << el << ' ';
+    return os;
+}
+
 namespace wolf::io {
     inline void boost() {
         std::ios_base::sync_with_stdio(false);
@@ -24,7 +30,7 @@ namespace wolf::io {
     inline void writeln(const Ts&... args) {
         ((out << args << " "), ...) << "\n";
     }
-
+    
     template<std::ostream& out = std::cout, typename ... Ts>
     inline void write(const Ts&... args) {
         ((out << args << " "), ...);
