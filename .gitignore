@@ -1,8 +1,10 @@
 *.out
 *.gcda
 *.gcno
+*.e
 
 catch.hpp
 live.cpp
 live.bin
 testRunner
+

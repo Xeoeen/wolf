@@ -15,5 +15,5 @@ install:
   - wget https://github.com/philsquared/Catch/releases/download/v1.9.4/catch.hpp
 
 script:
-  - make testRunner
-  - ./testRunner
+  - make test
+  - ./test
