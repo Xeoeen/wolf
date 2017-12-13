@@ -7,7 +7,7 @@ TEST_CASE("sum","[math]") {
 }
 
 TEST_CASE("mul","[math]") {
-    REQUIRE(wolf::math::mult(1, 2, 3) == 6);
+    REQUIRE(wolf::math::product(1, 2, 3) == 6);
     REQUIRE(wolf::math::sum(-1,1 ,0 ) == 0);
 }
 

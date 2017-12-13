@@ -2,7 +2,7 @@
 #include <wolf/numeric.hpp>
 
 TEST_CASE("prime","[numeric]") {
-    using isPrime = wolf::numeric::isPrimeNumber;
+    using namespace wolf::numeric;
 
     REQUIRE(isPrime(2));
     REQUIRE(isPrime(11));

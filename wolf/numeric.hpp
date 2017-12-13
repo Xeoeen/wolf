@@ -6,7 +6,7 @@ namespace wolf::numeric {
     using namespace std;
 
     template<typename T>
-    bool isPrimeNumber(T x) {
+    bool isPrime(T x) {
         if(x < 2)
             return false;
         T lim = sqrt(x);
@@ -18,25 +18,25 @@ namespace wolf::numeric {
     }
 
     struct EratosthenesSieve {
-        ErathosthenesSieve(int size):isPrime(size + 1, true), jump(size + 1) {
+        EratosthenesSieve(int size):prime(size + 1, true), jump(size + 1) {
             auto lim = sqrt(size);
             for(int i = 2 ; i <= lim ; ++i) {
-                if(isPrime[i]) {
+                if(prime[i]) {
                     for(int j = i * i ; j <= size ; j += i) {
-                        isPrime[j] = true;
+                        prime[j] = true;
                         jump[j] = i;
                     }
                 }
             }
             for(int i = 1 ; i <= size ; ++i)
-                if(isPrime[i])
+                if(prime[i])
                     jump[i] = i;
 
-            isPrime[1] = false;
+            prime[1] = false;
         }
         
         template<typename F>
-        void forAllInds(int num, F f) {
+        void forAllIngredients(int num, F f) {
             // be aware of one
             do {
                 f(jump[num]);
@@ -44,7 +44,7 @@ namespace wolf::numeric {
             }
             while(num != 1);
         }
-        vector<bool> isPrime;
+        vector<bool> prime;
         vector<int> jump;
-    }
+    };
 }

@@ -2,9 +2,9 @@
 *.gcda
 *.gcno
 *.e
+*.bin
 
 catch.hpp
 live.cpp
-live.bin
-testRunner
+test
 
