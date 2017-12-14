@@ -114,7 +114,7 @@ namespace wolf::graph {
     }
 
     template<typename Edge, typename F>
-    void kruscal(const Graph<Edge>& graph, F f) {
+    void kruskal(const Graph<Edge>& graph, F f) {
         auto fu = wolf::fu::FindUnion(graph.size());
         std::vector<Edge> edges;
         graph.forAllEdges([&](const auto& edge) { edges.push_back(edge); });
