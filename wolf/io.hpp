@@ -30,7 +30,7 @@ namespace wolf::io {
     inline void writeln(const Ts&... args) {
         ((out << args << " "), ...) << "\n";
     }
-    
+
     template<std::ostream& out = std::cout, typename ... Ts>
     inline void write(const Ts&... args) {
         ((out << args << " "), ...);
@@ -56,7 +56,7 @@ namespace wolf::io {
 
     template<typename ... Ts, std::istream& in = std::cin>
     inline auto loadMany() {
-        return std::tuple<Ts...>(load<Ts, in>()...);
+        return std::tuple{load<Ts, in>()...};
     }
 
 }
