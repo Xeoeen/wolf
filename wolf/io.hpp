@@ -10,6 +10,7 @@ std::ostream& operator<<(std::ostream& os, const std::vector<T> other) {
     for(const auto& el : other) os << el << ' ';
     return os;
 }
+
 namespace wolf::io {
     inline void boost() {
         std::ios_base::sync_with_stdio(false);
@@ -55,7 +56,7 @@ namespace wolf::io {
 
     template<typename ... Ts, std::istream& in = std::cin>
     inline auto loadMany() {
-        return std::make_tuple(load<Ts, in>()...);
+        return std::tuple<Ts...>(load<Ts, in>()...);
     }
 
 }

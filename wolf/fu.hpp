@@ -58,10 +58,8 @@ namespace wolf::fu{
                 rank[p1]++;
             }
             else {
-                point[p1] = p2;
+                point[p2] = p1;
             }
-
-            point[p1] = p2;
             return true;
         }
 

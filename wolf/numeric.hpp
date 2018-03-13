@@ -10,7 +10,7 @@ namespace wolf::numeric {
         if(x < 2)
             return false;
         T lim = sqrt(x);
-        
+
         for(T i = 2 ; i <= lim ; ++i)
             if(x % i == 0)
                 return false;
@@ -19,11 +19,11 @@ namespace wolf::numeric {
 
     struct EratosthenesSieve {
         EratosthenesSieve(int size):prime(size + 1, true), jump(size + 1) {
-            auto lim = sqrt(size);
+            auto lim = sqrt(size) + 1;
             for(int i = 2 ; i <= lim ; ++i) {
                 if(prime[i]) {
                     for(int j = i * i ; j <= size ; j += i) {
-                        prime[j] = true;
+                        prime[j] = false;
                         jump[j] = i;
                     }
                 }
@@ -34,7 +34,7 @@ namespace wolf::numeric {
 
             prime[1] = false;
         }
-        
+
         template<typename F>
         void forAllIngredients(int num, F f) {
             // be aware of one

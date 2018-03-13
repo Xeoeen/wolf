@@ -14,6 +14,6 @@ namespace wolf::logic{
 
     template<typename... Ts>
     inline bool noneOf(Ts&&... args) {
-        return !oneOf(args...);
+        return not oneOf(args...);
     }
 }
