@@ -27,3 +27,9 @@ TEST_CASE("min","[math]") {
     REQUIRE(wolf::math::min(15, 6, 302) == 6);
     REQUIRE(wolf::math::min(8, 8) == 8);
 }
+
+TEST_CASE("fastPow","[math]") {
+    REQUIRE(wolf::math::fastPow(2, 10) == 1024);
+    REQUIRE(wolf::math::fastPow(8, 1) == 8);
+    REQUIRE(wolf::math::fastPow(2, 11) == 2048);
+}

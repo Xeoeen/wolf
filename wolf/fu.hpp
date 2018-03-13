@@ -1,8 +1,8 @@
 #pragma once
 
-#include<vector>
+#include <vector>
 
-namespace wolf::fu{
+namespace wolf::fu {
 
     struct SmallFindUnion {
         SmallFindUnion(int size):point(size) {
@@ -32,7 +32,7 @@ namespace wolf::fu{
     };
 
     struct FindUnion {
-        FindUnion(int size):point(size), rank(size){
+        FindUnion(int size):point(size), rank(size) {
             int counter = -1;
             for(auto& it: point)
                 it = ++counter;

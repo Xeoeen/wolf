@@ -1,6 +1,6 @@
 #pragma once
 
-#include<vector>
+#include <vector>
 
 namespace wolf::structs{
     template<typename T, typename G = int>
@@ -13,10 +13,8 @@ namespace wolf::structs{
         }
 
         typename std::vector<T>::reference operator[] (int index) {
-            if(updateTime[index] != fillTime) {
-                updateTime[index] = fillTime;
-                storage[index] = fillVal;
-            }
+            if(updateTime[index] != fillTime)
+                updateTime[index] = fillTime, storage[index] = fillVal;
 
             return storage[index];
         }

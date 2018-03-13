@@ -3,6 +3,8 @@
 #include<vector>
 
 namespace wolf::structs::trees {
+
+    //unimplemented!()
     template<typename T>
     struct SegTree {
         SegTree(int size):size(size), base(1) {
@@ -11,7 +13,7 @@ namespace wolf::structs::trees {
             data.resize(2 * base);
         }
 
-        vector<T> data;
+        std::vector<T> data;
         int base;
         int size;
     };
