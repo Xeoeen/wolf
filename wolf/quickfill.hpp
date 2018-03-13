@@ -12,7 +12,7 @@ namespace wolf::structs{
             ++fillTime;
         }
 
-        typename std::vector<T>::reference; operator[] (int index) {
+        typename std::vector<T>::reference operator[] (int index) {
             if(updateTime[index] != fillTime) {
                 updateTime[index] = fillTime;
                 storage[index] = fillVal;
